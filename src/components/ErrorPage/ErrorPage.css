@@ -1,0 +1,28 @@
+.errorpage{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-image: url(https://defi.sucks/img/hero/hero-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.errorpage{
+	  display: inline-block;
+	  padding-right: 12px;
+	  animation: type .5s alternate infinite;
+      color: white;
+      font-weight: 800;
+}
+
+@keyframes type{
+	  from{box-shadow: inset -3px 0px 0px white;}
+	  to{box-shadow: inset -3px 0px 0px transparent;}
+}

@@ -2,6 +2,30 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Libraries
+
+Wallets:
+RainbowKit is a React library that makes it easy to add wallet connection to your dapp. It's intuitive, responsive and customizable.
+- npm install @rainbow-me/rainbowkit
+
+Contract interactions:
+- npm i ethers
+
+Navigation:
+- npm i react-router-dom
+
+Marquee:
+A lightweight React component that utilizes the power of CSS animations to create silky smooth marquees.
+- npm install react-fast-marquee --save
+
+Redux:
+- npm install react-redux
+- npm i redux
+
+Toastify:
+React-Toastify allows you to add notifications to your app with ease
+- npm i react-toastify
+
 ## Available Scripts
 
 In the project directory, you can run:
