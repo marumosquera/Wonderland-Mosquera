@@ -10,7 +10,7 @@ function useForm(initialState = {}, validations = [], onSubmit = () => {}) {
   const [isValid, setValid] = useState(initialIsValid);
   const [touched, setTouched] = useState({});
   const [recipient, setRecipient] = useState('');
-  const [amount, setAmount] = useState('')
+  const [amount, setAmount] = useState('');
 
   const changeHandler = (event) => {
     const newValues = { ...values, [event.target.name]: event.target.value };
@@ -25,10 +25,10 @@ function useForm(initialState = {}, validations = [], onSubmit = () => {}) {
     event.preventDefault();
     onSubmit(values);
     setAmount(values.amount);
-    setRecipient(values.recipient);
+    setRecipient(values.wallet);
   };
 
-  return { values, changeHandler, isValid, errors, touched, submitHandler };
+  return { values, changeHandler, isValid, errors, touched, submitHandler, recipient, amount };
 }
 
 function isRequired(value) {

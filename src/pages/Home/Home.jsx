@@ -3,6 +3,7 @@ import './Home.css'
 import { useAccount } from "wagmi";
 import { Form } from "../../components/Form/Form";
 import Token from "../../components/Token/Token";
+import { WalletDetails } from "../../components/WalletDetails/WalletDetails";
 
 const Home = () => {
 const {address} = useAccount();
@@ -11,6 +12,7 @@ const {address} = useAccount();
    <div className="home">
     {address
       ? <> 
+      <WalletDetails/>
       <Token/>
       <Form/> 
       </>

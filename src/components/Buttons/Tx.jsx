@@ -9,7 +9,7 @@ import { txnApproved } from "../../redux/store/approved/reducer";
 import { isApproved } from "../../redux/store/approved/action";
 import { connect } from "react-redux";
 import { tokenSelected } from "../../redux/store/token/reducer";
-import { useForm } from "../../hooks/useForm";
+
 
 const mapStateToProps = (state) => {
   return {
@@ -18,17 +18,18 @@ const mapStateToProps = (state) => {
   };
 };
 
-const Tx = ({ approved, token }) => {
+const Tx = ({ approved, token, amount, recipient }) => {
   const [errorMsg, setErrorMsg] = useState("ERROR");
   const [ethAmount, setEthAmount] = useState("");
   const [txInit, setTxInit] = useState(false);
   const [txHash, setTxHash] = useState(undefined);
   const [txConfirmed, setTxConfirmed] = useState(false);
   const { address } = useAccount();
-  const {recipient, amount} = useForm();
+  console.log('recipient =>', recipient)
 
   const tx = async (approved) => {
     const ethAmount = amount;
+    console.log(amount)
     if (!approved) {
       setTxInit(true);
       approve( recipient, ethAmount, token)

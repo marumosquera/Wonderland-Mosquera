@@ -3,7 +3,7 @@ import tokenReducer from "./token/reducer";
 import approvedReducer from "./approved/reducer";
 
 const reducers = combineReducers({
-  tokenReducer,approvedReducer,
+  tokenReducer,approvedReducer
 });
 
 const store = createStore(

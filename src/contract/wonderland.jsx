@@ -53,8 +53,9 @@ export const approve = async ( spender, amount, token) => {
 */
 
 // Amount of tokens approved to be sent
-const allowance = async (owner, spender, token) => {
-  const allowance = await initContracts(token).allowance(owner, spender);
+export const allowance = async (owner, spender, token) => {
+  const allowanceBig = await initContracts(token).allowance(owner, spender);
+const allowance = allowanceBig.toNumber()
   return allowance;
 };
 
@@ -88,4 +89,15 @@ export const send = async (owner, recipient, amount, token) => {
   return allowance;
 };
 
+/* 
+--- SMART CONTRACT ---
+function balanceOf(address account) public view virtual override returns (uint256) {
+  return _balances[account];
+}
+*/
 
+export const balance = async (owner, token) => {
+  const balanceBig = await initContracts(token).balanceOf(owner);
+  const balance = balanceBig.toBigInt();
+  return balance;
+};
